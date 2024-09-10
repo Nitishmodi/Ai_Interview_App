@@ -1,1 +1,1 @@
-# Ai_Interview_App
+# AI Based Candidate Filtering Platform
