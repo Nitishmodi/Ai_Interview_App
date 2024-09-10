@@ -5,8 +5,8 @@ A real-time candidate assessment platform that automates the recruitment process
 
 ## Tech Stack
 - **Front-end:** Next.js, React
-- **Back-end:** Gemini API, Drizzle ORM
-- **Database:** (Specify your database here, e.g., PostgreSQL, MySQL)
+- **Back-end:** Gemini API, Node/Express.js
+- **Database:** (Drizzle ORM, PostgreSql)
 
 ## Features
 - **Automated Candidate Filtering:** Filters candidates based on years of experience, job roles, and skills with real-time assessments.
