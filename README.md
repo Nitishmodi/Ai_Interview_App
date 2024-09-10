@@ -19,5 +19,7 @@ A real-time candidate assessment platform that automates the recruitment process
 
 1. **Clone the repository:**
    ```bash
+    git clone https://github.com/Nitishmodi/Ai_Interview_App
+    cd Ai_Interview_App
    
 
