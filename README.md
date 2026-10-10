@@ -1,55 +1,43 @@
-# AI Based Candidate Filtering Platform
-# Candidate Filtering Platform
+# DevPilot AI
 
-A real-time candidate assessment platform that automates the recruitment process by evaluating candidates based on their experience, job roles, and skills. The platform generates reports and filters candidates based on dynamic questions tailored to specific requirements.
+A hiring screen for recruiters and candidates.
 
-## Tech Stack
-- **Front-end:** Next.js, React
-- **Back-end:** Gemini API, Node/Express.js
-- **Database:** (Drizzle ORM, PostgreSql)
+A recruiter writes a job post and chooses when it is visible. A candidate sees open roles ranked by the role they want, their experience, and their skills. Applying starts a screen that Gemini writes for that person: 20 skill questions, 5 recorded answers, and 5 communication answers. The answers are saved and scored. Both sides get the same scorecard, with charts and a PDF.
 
-## Features
-- **Automated Candidate Filtering:** Filters candidates based on years of experience, job roles, and skills with real-time assessments.
-- **Dynamic Question System:** Generates and evaluates real-time questions tailored to the candidate's background.
-- **Report Generation:** Provides detailed reports on candidate responses to help recruiters make informed decisions.
-- **Recruitment Automation:** Streamlines the recruitment process, reducing manual effort and increasing efficiency.
-- **Scalable Architecture:** Built with a scalable architecture to handle large volumes of candidate data.
+A proceed means above 80% in every section and above 80% overall. Anything short of that is marked not this time, and the candidate may be considered for a future role. The recruiter still makes the final call.
 
-## Installation
+## Stack
 
-1. **Clone the repository:**
-   ```bash
-    git clone https://github.com/Nitishmodi/Ai_Interview_App
-    cd Ai_Interview_App
-2. Install dependencies:
+- Next.js, React, Tailwind CSS
+- Gemini API
+- PostgreSQL with Drizzle
 
+An attempt, its job, the candidate, and the scorecard are read in one join. Saving an answer checks ownership without loading the paper. Job lists return a short preview, and screen counts are aggregated in SQL. Indexes cover recruiter, job status, and candidate.
+
+## Setup
+
+```bash
+git clone https://github.com/Nitishmodi/Ai_Interview_App
+cd Ai_Interview_App/interview_app
 npm install
-3. Set up environment variables:
-Create a .env file in the root directory and add your API keys and database credentials:
+cp .env.example .env.local
+```
 
-NEXT_PUBLIC_API_KEY=your_api_key
-DATABASE_URL=your_database_url
+Fill in `.env.local`:
 
-4. Run the development server:
+- `DATABASE_URL` — Postgres connection string
+- `SESSION_SECRET` — a long random string
+- `GEMINI_API_KEY` — from Google AI Studio
+- `GEMINI_MODEL` — optional, defaults to `gemini-3.8-flash`
 
+Tables are created the first time someone signs in. Then:
+
+```bash
 npm run dev
-5. Build for production:
+```
 
-npm run build
-Usage
-Access the platform at http://localhost:3000 after running the development server.
-Recruiters can create job roles and input the required skills and experience.
-Candidates answer real-time questions, and the platform generates a detailed report.
-The system filters candidates automatically based on the evaluation.
-Contributing
-Fork the repository.
-Create a new branch (git checkout -b feature-branch).
-Commit your changes (git commit -m 'Add new feature').
-Push to the branch (git push origin feature-branch).
-Open a pull request.
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+Open [http://localhost:3000](http://localhost:3000). Create a recruiter profile and a candidate profile. They land on different desks.
 
-Contact
-For any queries, contact nitishmodi200@gmail.com.
+## Contact
 
+nitishmodi200@gmail.com
