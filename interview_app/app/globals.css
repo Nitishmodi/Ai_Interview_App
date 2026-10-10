@@ -135,6 +135,28 @@ body {
   background: #f4f8fb;
 }
 
+.desk .choice {
+  background: #fff;
+  color: #152033;
+  border-color: #d5e0ea;
+}
+
+.desk .choice.lift:hover {
+  border-color: #0e7c74;
+  box-shadow: 0 10px 24px rgba(14, 124, 116, 0.12);
+}
+
+.desk .choice:has(:checked) {
+  background: #0e7c74;
+  color: #fff;
+  border-color: #0b6560;
+  box-shadow: 0 10px 24px rgba(14, 124, 116, 0.22);
+}
+
+.desk .choice:has(:checked) .text-\[\#9c9890\] {
+  color: rgba(255, 255, 255, 0.86);
+}
+
 .desk input,
 .desk textarea,
 .desk select {

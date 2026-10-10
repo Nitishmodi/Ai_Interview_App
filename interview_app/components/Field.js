@@ -8,7 +8,7 @@ export const quietClass =
   "press inline-flex items-center justify-center rounded-full border border-white/15 bg-transparent px-4 py-2.5 text-sm font-semibold text-[#f3f0e8] hover:border-white/40 disabled:opacity-60";
 
 export const choiceClass =
-  "lift cursor-pointer rounded-2xl border border-white/10 bg-[#141820] px-4 py-3 has-[:checked]:border-[#ff5a1f] has-[:checked]:bg-[#2a160f]";
+  "choice lift cursor-pointer rounded-2xl border border-white/10 bg-[#141820] px-4 py-3 has-[:checked]:border-[#ff5a1f] has-[:checked]:bg-[#2a160f]";
 
 export function Field({ label, hint, children }) {
   return (
